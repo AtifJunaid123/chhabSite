@@ -1,33 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GBHS CHHAB - Official Website</title>
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
       background-color: #f3f3f3;
       color: #333;
-      margin: 0;
-      padding: 0;
     }
+
+    /* Header */
     header {
       background-color: #004080;
       color: white;
       padding: 20px;
       text-align: center;
     }
+
+    /* Navigation Sidebar */
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #002d5e;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 10px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      background-color: #004080;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .open-nav {
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    /* Section */
     section {
       padding: 20px;
+      transition: margin-left 0.5s;
     }
+
     .card {
       background-color: white;
       margin: 10px 0;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
     footer {
       background-color: #004080;
       color: white;
@@ -35,22 +97,45 @@
       padding: 10px;
       margin-top: 20px;
     }
+
+    @media screen and (max-width: 600px) {
+      .open-nav {
+        top: 10px;
+        left: 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Side Navigation -->
+  <div id="mySidenav" class="sidenav">
+    <span class="closebtn" onclick="closeNav()">&times;</span>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#history">History</a>
+    <a href="#teachers">Our Teachers</a>
+    <a href="#sports">Sports</a>
+    <a href="#academics">Academics</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Header -->
+  <header id="home">
+    <span class="open-nav" onclick="openNav()">&#9776;</span>
     <h1>Government Boys High School CHHAB</h1>
     <p>Email: gbhs.chhab@gmail.com | Phone: +92 344 5371048</p>
     <p>Head of Institute: Imran Khan</p>
   </header>
 
+  <!-- Content -->
   <section>
-    <div class="card">
+    <div class="card" id="about">
       <h2>About Us</h2>
       <p>GBHS CHHAB is committed to providing quality education and discipline to its students. Our focus is not only on academic excellence, but also on character building and physical development.</p>
     </div>
-<div class="card">
+
+    <div class="card" id="history">
       <h2>History of GBHS Chhab</h2>
       <p>This area was deprived of educational facilities. During British rule, there was a major cholera epidemic in the village. Sufi Sheikh Ahmed Hussain, a well-respected and honorable individual, made efforts to establish this institution to provide free and compulsory education to the people. Around 1922, he gathered people for a meeting to discuss the importance of education and the need for an educational institution.</p>
       <p>The foundation of this school was laid in 1926 with the prayers and support of the community. After Pakistan's independence, the need for an educational institution was further emphasized. Since then, this school has been contributing significantly to educating and guiding young minds.</p>
@@ -58,26 +143,43 @@
       <p>The school has since been striving to uphold its values and fulfill its mission to provide quality education and enlighten students in this area.</p>
     </div>
 
-      <div class="card">
-    <div class="card">
+    <div class="card" id="teachers">
       <h2>Our Teachers</h2>
       <p>Our faculty consists of highly experienced and dedicated teachers who work hard to ensure every student’s success. Their experience, knowledge, and passion help create a supportive learning environment.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="sports">
       <h2>Sports Activities</h2>
       <p>We believe in the importance of physical education. GBHS CHHAB regularly organizes sports events to promote teamwork, leadership, and fitness among students.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="academics">
       <h2>Academics</h2>
       <p>We offer a comprehensive curriculum designed to meet the modern educational standards. Students are encouraged to think critically, solve problems, and aim high in every field of study.</p>
     </div>
+
+    <div class="card" id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Email:</strong> gbhs.chhab@gmail.com</p>
+      <p><strong>Phone:</strong> +92 344 5371048</p>
+      <p><strong>Address:</strong> Government Boys High School, Chhab, Pakistan</p>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 GBHS CHHAB | Developed with Muhammad Khurram Shahzad</p>
+    <p>&copy; 2025 GBHS CHHAB | Developed with ❤️ by Muhammad Khurram Shahzad</p>
   </footer>
+
+  <!-- JavaScript for Navigation -->
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
 
 </body>
 </html>
