@@ -3,72 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Government Boys High School Chhab</title>
+  <title>Govt. Boys High School Chhab</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
 
   <style>
-    body {
-      scroll-behavior: smooth;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #007bff;
-      transform: scale(1.1);
-      transition: all 0.3s;
-    }
-
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; }
+    .navbar-nav .nav-link:hover, .navbar-brand:hover { color: #0d6efd !important; }
     .hero {
-      background: url('https://images.unsplash.com/photo-1600607688940-07bcace31f26') no-repeat center center;
+      background: url('https://images.unsplash.com/photo-1600607688940-07bcace31f26?auto=format&fit=crop&w=1500&q=80') no-repeat center center;
       background-size: cover;
       color: white;
-      height: 90vh;
+      min-height: 93vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.16);
     }
-
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: rgba(47,78,123,0.64);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+    }
+    .section-title {
+      font-weight: bold;
+      color: #0d6efd;
+      letter-spacing: 1px;
+      margin-bottom: 1.25rem;
+    }
+    .feature-icon {
+      font-size:2.8rem;
+      color: #0d6efd;
+      margin-bottom: 0.7rem;
+    }
+    .gallery-img { object-fit: cover; width:100%; height:190px; border-radius:8px; }
     .footer {
-      background-color: #343a40;
-      color: white;
-      padding: 20px 0;
+      background-color: #212529;
+      color: #dee2e6;
+      padding: 22px 0 10px 0;
     }
+    .team img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 8px #0002;}
+    .testi-img {width: 60px; height: 60px; object-fit:cover; border-radius: 50%;}
+    .admission-btn, .navbar .btn-primary {
+      color: #fff !important; background: #007bff; border:none;
+    }
+    .admission-btn:hover { background: #0056b3;}
+    .contact-info i { color: #0d6efd; margin-right: 0.48rem;}
+    .map-responsive {
+      overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;
+    }
+    .map-responsive iframe {
+      left:0; top:0; height:100%; width:100%; position: absolute; border:0;
+    }
+    @media (max-width: 576px) {
+      .hero h1 {font-size:1.7rem;}
+      .gallery-img {height:120px;}
+    }
+    .nav-link.active { color:#ffc107!important; }
   </style>
 </head>
-
 <body>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
     <div class="container">
-      <a class="navbar-brand animate__animated animate__fadeInDown" href="#">Govt. Boys High School Chhab</a>
+      <a class="navbar-brand animate__animated animate__fadeInDown" href="#">
+        <i class="bi bi-mortarboard-fill me-2"></i>GBHS Chhab
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#principal">Principal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
           <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Home Section -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="container text-center">
-      <h1 class="display-4 animate__animated animate__fadeInLeft">Welcome to Our School</h1>
-      <p class="lead animate__animated animate__fadeInRight">Quality Education for a Better Future</p>
-      <a href="#blog" class="btn btn-primary mt-3 animate__animated animate__zoomIn"><i class="bi bi-book"></i> Read Our Blog</a>
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-center animate__animated animate__fadeIn">
+      <h1 class="display-4 animate__animated animate__fadeInLeft">Welcome to Govt. Boys High School Chhab</h1>
+      <p class="lead animate__animated animate__fadeInRight mb-4">Quality Education for a Brighter Future</p>
+      <a href="#admissions" class="btn btn-primary btn-lg admission-btn animate__animated animate__bounceIn mb-1"><i class="bi bi-person-plus"></i> Apply for Admission</a>
     </div>
   </section>
 
@@ -76,67 +115,233 @@
   <section class="py-5 bg-light" id="about">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6 animate__animated animate__fadeInLeft">
-          <h2>About Our School</h2>
+        <div class="col-lg-6 animate__animated animate__fadeInLeft">
+          <h2 class="section-title">About Our School</h2>
           <p>
-            Govt. Boys High School Chhab is committed to delivering high-quality education. We nurture minds to
-            become future leaders, equipped with knowledge, values, and confidence.
+            Govt. Boys High School Chhab is dedicated to providing excellent education to nurture young minds for a successful future.
+            Established in 1980, our school prides itself on creating well-rounded individuals who excel academically and socially.
           </p>
-          <p>
-            Our experienced staff, well-stocked library, and sports facilities create a well-rounded learning
-            environment.
-          </p>
+          <ul>
+            <li>Experienced & passionate faculty</li>
+            <li>State-of-the-art library and science labs</li>
+            <li>Modern sports and playground facilities</li>
+            <li>Focus on moral values and leadership skills</li>
+          </ul>
         </div>
-        <div class="col-md-6 animate__animated animate__fadeInRight">
-          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc" class="img-fluid rounded" alt="Library">
+        <div class="col-lg-6 animate__animated animate__fadeInRight">
+          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc" class="img-fluid rounded shadow" alt="Our School">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Blog Section -->
-<!-- Blog Section -->
-<section class="py-5" id="blog">
-  <div class="container text-center">
-    <h2 class="mb-4 animate__animated animate__fadeInUp">School Blog</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc" class="card-img-top" alt="Blog 1">
-          <div class="card-body">
-            <h5 class="card-title">Annual Sports Day</h5>
-            <p class="card-text">An exciting day filled with athleticism, teamwork, and house spirit. Explore how students shined!</p>
-          </div>
+  <!-- Principal Message Section -->
+  <section class="py-5" id="principal">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-4 text-center animate__animated animate__fadeInDown">
+          <img src="https://randomuser.me/api/portraits/men/412.jpg" class="rounded-circle shadow" style="width: 150px;" alt="Principal" />
+        </div>
+        <div class="col-md-8 animate__animated animate__fadeInUp">
+          <h2 class="section-title">Principal's Message</h2>
+          <p>
+            <em>
+            "At GBHS Chhab, we strive for excellence not just in academics, but also in character and values.
+            Our goal is to inspire holistic growth, confidence and a lifelong love of learning in every student. We welcome you to our family."
+            </em>
+            <br>
+            <strong>- Mr. Ahmed Nazir Awan, Principal</strong>
+          </p>
         </div>
       </div>
-      <div class="col-md-4 mb-4 animate__animated animate__zoomIn animate__delay-1s">
-        <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1559027615-cdcb402031fd" class="card-img-top" alt="Blog 2">
-          <div class="card-body">
-            <h5 class="card-title">Science Exhibition</h5>
-            <p class="card-text">Showcasing creativity and innovation through models and presentations by our students.</p>
-          </div>
+    </div>
+  </section>
+
+  <!-- Academics & Facilities Section -->
+  <section class="py-5 bg-light" id="academics">
+    <div class="container">
+      <h2 class="section-title text-center animate__animated animate__fadeInUp">Academics & Facilities</h2>
+      <div class="row text-center g-4 mt-3">
+        <div class="col-md-3">
+          <div class="feature-icon"><i class="bi bi-book-half"></i></div>
+          <h5>Curriculum</h5>
+          <p>Well-balanced academic curriculum for all grades, following Punjab board standards.</p>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-icon"><i class="bi bi-flask"></i></div>
+          <h5>Labs</h5>
+          <p>Advanced science and computer labs to encourage hands-on learning and exploration.</p>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-icon"><i class="bi bi-trophy"></i></div>
+          <h5>Sports</h5>
+          <p>Cricket, football, athletics and indoor games–building healthy minds and bodies.</p>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-icon"><i class="bi bi-people"></i></div>
+          <h5>Clubs</h5>
+          <p>Literary, Science, Art and Social clubs enhance critical thinking and creativity.</p>
         </div>
       </div>
-      <div class="col-md-4 mb-4 animate__animated animate__zoomIn animate__delay-2s">
-        <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1604083184087-57f7997a20c9" class="card-img-top" alt="Blog 3">
-          <div class="card-body">
-            <h5 class="card-title">Library Upgraded</h5>
-            <p class="card-text">New books, digital resources, and peaceful study spaces now available for students and faculty.</p>
+    </div>
+  </section>
+
+  <!-- Admissions Section -->
+  <section class="py-5" id="admissions">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 animate__animated animate__fadeInLeft">
+          <h2 class="section-title">Admissions Open</h2>
+          <p>We are currently accepting admissions for all grades. Join a tradition of academic excellence and holistic development!</p>
+          <ul>
+            <li>Application Deadline: <strong>30th August 2024</strong></li>
+            <li>Eligibility: Boys, Grades 6-10</li>
+            <li>Admission Process: Fill the online application or visit our school reception</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary admission-btn"><i class="bi bi-envelope"></i> Enquire Now</a>
+        </div>
+        <div class="col-lg-6 animate__animated animate__fadeInRight">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b" class="img-fluid rounded shadow" alt="Admissions"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog/Events Section -->
+  <section class="py-5 bg-light" id="blog">
+    <div class="container">
+      <h2 class="section-title text-center">Latest Events & Blog</h2>
+      <div class="row mt-4">
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc" class="card-img-top" alt="Sports Day">
+            <div class="card-body">
+              <h5 class="card-title">Annual Sports Day</h5>
+              <p class="card-text">A day of team spirit, healthy competition and fun! Our houses competed in a variety of athletics and games.</p>
+            </div>
+            <div class="card-footer small">10 May 2024</div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1559027615-cdcb402031fd" class="card-img-top" alt="Science Exhibition">
+            <div class="card-body">
+              <h5 class="card-title">Science Exhibition</h5>
+              <p class="card-text">Innovative projects and models showcased by students. Parents and guests were amazed by the creativity!</p>
+            </div>
+            <div class="card-footer small">20 April 2024</div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1604083184087-57f7997a20c9" class="card-img-top" alt="Library Upgraded">
+            <div class="card-body">
+              <h5 class="card-title">Library Upgraded</h5>
+              <p class="card-text">New arrivals – fiction, non-fiction, and digital resources for both students and staff are now available.</p>
+            </div>
+            <div class="card-footer small">5 March 2024</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-5" id="gallery">
+    <div class="container">
+      <h2 class="section-title text-center">Photo Gallery</h2>
+      <div class="row g-3 mt-3">
+        <div class="col-6 col-md-3"><img class="gallery-img" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61" alt="Gallery" /></div>
+        <div class="col-6 col-md-3"><img class="gallery-img" src="https://images.unsplash.com/photo-1513258496099-48168024aec0" alt="Gallery" /></div>
+        <div class="col-6 col-md-3"><img class="gallery-img" src="https://images.unsplash.com/photo-1589578527966-261cf5b5b0c5" alt="Gallery" /></div>
+        <div class="col-6 col-md-3"><img class="gallery-img" src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2" alt="Gallery" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-5 bg-light" id="team">
+    <div class="container">
+      <h2 class="section-title text-center">Our Faculty</h2>
+      <div class="row text-center team justify-content-center">
+        <div class="col-6 col-md-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/men/412.jpg" alt="Principal">
+          <h6 class="mt-2 mb-0">Imran Khan</h6>
+          <small>Principal</small>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/women/311.jpg" alt="Science Teacher">
+          <h6 class="mt-2 mb-0">Mrs. Ayesha Zafar</h6>
+          <small>Science Teacher</small>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/men/314.jpg" alt="Math Teacher">
+          <h6 class="mt-2 mb-0">Mr. Bilal Khan</h6>
+          <small>Math Teacher</small>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="English Teacher">
+          <h6 class="mt-2 mb-0">Ms. Saba Qureshi</h6>
+          <small>English Teacher</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-5" id="testimonials">
+    <div class="container">
+      <h2 class="section-title text-center">What Our Students Say</h2>
+      <div class="row justify-content-center g-4 mt-4">
+        <div class="col-md-4 text-center">
+          <img src="https://randomuser.me/api/portraits/men/10.jpg" class="testi-img mb-2" alt="Student" />
+          <blockquote class="blockquote">
+            <p>"The teachers are wonderful and always encourage me to do my best. The labs and sports ground are amazing!"</p>
+            <footer class="blockquote-footer">Ali Hassan, Grade 9</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="https://randomuser.me/api/portraits/men/20.jpg" class="testi-img mb-2" alt="Student" />
+          <blockquote class="blockquote">
+            <p>"I've made great friends and learned so much here. Our school is the best in the area for sure."</p>
+            <footer class="blockquote-footer">Zain Nawaz, Grade 10</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact Section -->
   <section class="py-5 bg-light" id="contact">
     <div class="container">
-      <h2 class="text-center mb-4 animate__animated animate__fadeInDown">Contact Us</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8 animate__animated animate__fadeInUp">
+      <h2 class="section-title text-center">Contact Us</h2>
+      <div class="row justify-content-between">
+        <div class="col-md-5 animate__animated animate__fadeInLeft">
+          <div>
+            <h5>Get in Touch</h5>
+            <div class="contact-info mb-3">
+              <i class="bi bi-geo-alt"></i> <span>Govt High School, Chhab, District Attock, Pakistan</span>
+            </div>
+            <div class="contact-info mb-3">
+              <i class="bi bi-telephone"></i> <span>+92 334 123 4567</span>
+            </div>
+            <div class="contact-info mb-3">
+              <i class="bi bi-envelope"></i> <span>gbhschhab@gmail.com</span>
+            </div>
+            <div class="contact-info">
+              <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook fs-4 me-2"></i></a>
+              <a href="#" target="_blank"><i class="bi bi-twitter fs-4 me-2"></i></a>
+              <a href="#" target="_blank"><i class="bi bi-instagram fs-4"></i></a>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h6>School Hours</h6>
+            <p class="mb-1"><b>Mon - Thu:</b> 8:00 AM – 2:00 PM</p>
+            <p class="mb-1"><b>Fri:</b> 8:00 AM – 12:00 PM</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 animate__animated animate__fadeInUp">
           <form>
             <div class="mb-3">
               <label for="name" class="form-label">Full Name</label>
@@ -148,10 +353,19 @@
             </div>
             <div class="mb-3">
               <label for="msg" class="form-label">Your Message</label>
-              <textarea class="form-control" id="msg" rows="5" required></textarea>
+              <textarea class="form-control" id="msg" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Send Message</button>
           </form>
+        </div>
+      </div>
+
+      <!-- Map Embed -->
+      <div class="row mt-4">
+        <div class="col">
+          <div class="map-responsive shadow rounded">
+            <iframe src="https://www.google.com/maps?q=Chhab,+Attock,+Punjab,+Pakistan&output=embed" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -160,11 +374,29 @@
   <!-- Footer -->
   <footer class="footer text-center mt-5">
     <div class="container">
-      <p>Developed by <strong>M Khurram Shehzad</strong></p>
+      <p class="mb-1">© 2024 Govt. Boys High School Chhab. All rights reserved.</p>
+      <p>
+        <small>Developed by <strong>M Khurram Shehzad</strong></small>
+      </p>
     </div>
   </footer>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Optional: Activate smooth scroll for anchor links if needed -->
+  <script>
+    document.querySelectorAll('a.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if(target) {
+            window.scrollTo({top: target.offsetTop-70, behavior:'smooth'});
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
