@@ -4,47 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Government Boys High School CHHAB</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    .navbar-nav .nav-link:hover {
-      color: #ffc107;
-      transition: 0.3s;
+    body {
+      scroll-behavior: smooth;
     }
-    .navbar-nav .nav-link.active {
-      color: #0d6efd;
+    .nav-link:hover {
+      color: #0d6efd !important;
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
     }
-    header {
-      background: url('https://via.placeholder.com/1200x300?text=Government+Boys+High+School+CHHAB') no-repeat center center;
+    .hero-section {
+      background: url('https://images.unsplash.com/photo-1588075592446-ecf9b52e4f2f') no-repeat center center;
       background-size: cover;
-      height: 300px;
+      height: 100vh;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-shadow: 2px 2px #000;
     }
-    .animated-section {
-      animation: fadeInUp 1s ease-in-out;
-    }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    footer {
+    .footer {
       background-color: #343a40;
       color: white;
-      padding: 20px;
+      padding: 1rem;
       text-align: center;
     }
   </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container-fluid">
+  <div class="container">
     <a class="navbar-brand" href="#">GBHS CHHAB</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -52,7 +45,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#home">Home</a>
+          <a class="nav-link" href="#home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about">About Us</a>
@@ -68,67 +61,73 @@
   </div>
 </nav>
 
-<header id="home">
-  Welcome to Government Boys High School CHHAB
-</header>
+<!-- Hero Section -->
+<section id="home" class="hero-section" data-aos="fade-in">
+  <div class="text-center">
+    <h1 class="display-3 fw-bold">Welcome to GBHS CHHAB</h1>
+    <p class="lead">Excellence in Education Since 1980</p>
+  </div>
+</section>
 
-<section id="about" class="container py-5 animated-section">
+<!-- About Us Section -->
+<section id="about" class="container py-5">
   <div class="row align-items-center">
-    <div class="col-md-6">
-      <img src="https://via.placeholder.com/500x300?text=School+Library" alt="Library" class="img-fluid rounded">
+    <div class="col-md-6" data-aos="fade-right">
+      <h2>About Our School</h2>
+      <p>Government Boys High School CHHAB is dedicated to fostering academic excellence and all-round development. We aim to nurture young minds for a brighter future.</p>
     </div>
-    <div class="col-md-6">
-      <h2>About Us</h2>
-      <p>Our school provides quality education and emphasizes discipline and character building. We offer a wide range of academic and co-curricular activities to enhance students' learning experience.</p>
-    </div>
-  </div>
-</section>
-
-<section id="blog" class="container py-5 animated-section">
-  <div class="text-center mb-4">
-    <h2>School Blog</h2>
-    <p class="text-muted">Stay updated with school activities and news.</p>
-  </div>
-  <div class="row">
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <img src="https://via.placeholder.com/350x200?text=Science+Fair" class="card-img-top" alt="Blog1">
-        <div class="card-body">
-          <h5 class="card-title">Annual Science Fair</h5>
-          <p class="card-text">Students displayed innovative projects and demonstrated their scientific knowledge.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <img src="https://via.placeholder.com/350x200?text=Sports+Day" class="card-img-top" alt="Blog2">
-        <div class="card-body">
-          <h5 class="card-title">Sports Day 2025</h5>
-          <p class="card-text">A full day of competitions and activities promoting health and team spirit.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <img src="https://via.placeholder.com/350x200?text=Library+Week" class="card-img-top" alt="Blog3">
-        <div class="card-body">
-          <h5 class="card-title">Library Week</h5>
-          <p class="card-text">Encouraging reading habits among students with various book-related events.</p>
-        </div>
-      </div>
+    <div class="col-md-6" data-aos="fade-left">
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238" class="img-fluid rounded shadow" alt="Library">
     </div>
   </div>
 </section>
 
-<section id="contact" class="container py-5 animated-section">
+<!-- Blog Section -->
+<section id="blog" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">School Blog</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card h-100 shadow">
+          <img src="https://images.unsplash.com/photo-1596495686564-bdbbbdd75b1f" class="card-img-top" alt="Science Fair">
+          <div class="card-body">
+            <h5 class="card-title">Annual Science Exhibition</h5>
+            <p class="card-text">Students displayed amazing innovations and scientific models that impressed the whole community.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100 shadow">
+          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61" class="card-img-top" alt="Sports Day">
+          <div class="card-body">
+            <h5 class="card-title">Sports Gala 2025</h5>
+            <p class="card-text">A fun-filled day of athletics and team competitions held on school grounds.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card h-100 shadow">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754" class="card-img-top" alt="Library Upgrade">
+          <div class="card-body">
+            <h5 class="card-title">Library Renovation</h5>
+            <p class="card-text">We’ve added 500+ new books and launched a digital reading area for students.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container py-5">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 mb-4" data-aos="fade-right">
       <h2>Contact Us</h2>
-      <p><i class="fas fa-map-marker-alt"></i> CHHAB, Pakistan</p>
-      <p><i class="fas fa-phone"></i> +92 300 0000000</p>
-      <p><i class="fas fa-envelope"></i> gbhs@school.pk</p>
+      <p><i class="bi bi-geo-alt"></i> CHHAB, Pakistan</p>
+      <p><i class="bi bi-envelope"></i> info@gbhschhab.edu.pk</p>
+      <p><i class="bi bi-telephone"></i> +92-300-0000000</p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" data-aos="fade-left">
       <form>
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
@@ -140,18 +139,28 @@
         </div>
         <div class="mb-3">
           <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="3" required></textarea>
+          <textarea class="form-control" id="message" rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
     </div>
   </div>
 </section>
 
-<footer>
-  Developed by <strong>M Khurram Shehzad</strong>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p class="mb-0">Developed by M Khurram Shehzad</p>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
 </body>
 </html>
